@@ -1,0 +1,147 @@
+body{
+    margin: 0 ;
+    box-sizing: border-box;
+  }
+  
+  .navbar-left{
+    display: flex;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  .navbar-left > h1{
+    font-size: 40px;
+  }
+  .navbar-left-h1{
+    color: orange;
+  }
+  .navbar-right a{
+    text-decoration: none;
+    color: black;
+  
+  }
+  .navbar-right{
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+    padding-top: 35px;
+    font-size: 20px;
+  }
+  .navbar-right :hover{
+    color: rgb(216, 145, 14);
+  }
+  .navbar{
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    right: 0;
+    left: 0;
+    background-color: white;
+    position: fixed;
+    z-index: 10;
+  }
+  .shop{
+    background-image: url(https://preview.colorlib.com/theme/selling/images/hero_2.jpg);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    position: relative;
+  }
+  .shop-texts{
+    width: 40%;
+    font-size: 30px;
+    color: white;
+    position: absolute;
+    top: 280px;
+    left: 350px;
+  
+  }
+  .shop-buttons{
+    display: flex;
+    gap: 5px;
+  }
+  .btn-one button{
+    padding: 20px 40px;
+    background-color: transparent;
+    border: white 2px solid;
+    color: white;
+  }
+  .btn-one :hover{
+    background-color: white;
+    color: black;
+  }
+  .btn-two button{
+    padding: 20px 40px;
+    background-color: white;
+    color: black;
+    border: none;
+  }
+  .btn-two :hover{
+    background-color: transparent;
+    border: white 2px solid ;
+  }
+  .about-text{
+    width: 15%;
+    height: 20%;
+    padding-top: 100px ;
+    padding-right: 130px;
+  }
+  .about{
+    
+    padding-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .about-img img{
+    width: 70vh;
+  }
+  .about-text button{
+    background-color: black;
+    color: white;
+    padding: 10px;
+  
+  }
+  .about-text  :hover{
+    background-color: white;
+    color: black;
+  }
+  
+  .merchant{
+    background-color: rgb(86, 204, 145);
+    color: white;
+    font-size: 25px;
+    width: 70%;
+    text-align: center;
+    position: relative;
+    bottom: 100px;
+    left: 250px;
+  }
+  .l-card{
+    text-align: center;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .leadership-text{
+    text-align: center;
+  }
+  .l-icons{
+    display: flex;
+    gap: 10px; 
+  }
+  .l-icons p{
+    background-color: gray;
+    padding: 5px;
+    border-radius: 100%;
+  }
+  .l-icons  :hover{
+    background-color: rgb(184, 174, 174);
+  }
+  .leadership-cards{
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .leadership{
+    margin-bottom: 8%;
+  }
