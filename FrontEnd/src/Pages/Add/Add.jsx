@@ -1,8 +1,14 @@
 import React from 'react'
+import {Helmet} from "react-helmet";
 
 function Add() {
   return (
-    <div>Add</div>
+    <div>
+      <Helmet>
+        <title>Add </title>
+      </Helmet>
+
+    </div>
   )
 }
 

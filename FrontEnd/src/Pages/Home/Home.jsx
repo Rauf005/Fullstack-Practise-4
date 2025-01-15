@@ -4,10 +4,14 @@ import { FaTwitter } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaCircle } from "react-icons/fa";
+import {Helmet} from "react-helmet";
 
 function Home() {
   return (
     <div>
+      <Helmet>
+        <title>Home </title>
+      </Helmet>
             <div className='shop'>
                 <img src="" alt="" />
                 <div className='shop-texts'>
