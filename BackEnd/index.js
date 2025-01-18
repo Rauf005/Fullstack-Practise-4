@@ -7,7 +7,7 @@ app.use(express.json())
 app.use(cors())
 config()
 import "./config/config.js"
-app.use("/products",route)
+app.use("/sellings",route)
 app.listen(3000,()=>{
     console.log("bu app 3000 portunda dinlenilir")
 })

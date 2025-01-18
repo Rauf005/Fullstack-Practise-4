@@ -4,9 +4,44 @@ import { FaTwitter } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaCircle } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa";
 import {Helmet} from "react-helmet";
+import { useState } from 'react'
+import { useEffect } from 'react';
+import axios from 'axios';
+import { useContext } from 'react';
+import { favoriteContext } from '../../Context/FavoriteContext';
 
-function Home() {
+function Home(product) {
+    let {favorite,setFavorite}=useContext(favoriteContext)
+    let [searchQuery, setSearchQuery] = useState('')
+    let [products,setProducts]=useState([])
+    function getData(){
+      axios.get("http://localhost:3000/sellings")
+      .then((res)=>{
+        setProducts(res.data)
+      })
+    }
+    useEffect(()=>{
+       getData()
+    },[])
+    function handleSearch(event) {
+        setSearchQuery(event.target.value)
+      }
+      const filteredProducts = products.filter(product => 
+        product.name.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+      function handleAddFavorite(product){
+        let findFavorite= favorite.find(item=>item._id==product._id)
+    
+        if(findFavorite){
+           alert("Bu mehsul wishlistde movcuddur")
+        }else{
+           setFavorite([...favorite,product])
+           alert("Məhsul wishlistə əlavə edildi")
+        }
+     }
+
   return (
     <div>
       <Helmet>
@@ -23,7 +58,30 @@ function Home() {
                     </div>
                 </div>
             </div>
-            <div className='products'></div>
+            <div className='products'>
+                <h1>Our Products</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae <br /> nostrum natus excepturi fuga ullam accusantium vel ut eveniet aut <br /> consequatur laboriosam ipsam.</p>
+                <form action="">
+          <input style={{marginBottom:"10%"}} value={searchQuery}  onChange={handleSearch} className="search" type="text" placeholder='Search'/>
+        </form>
+                <div className='productcards'>
+                { filteredProducts.map(product=>(
+                <div className='productcard' key={product._id}>
+                
+                    <img src={product.image} alt="" />
+                    <div className="producttext">
+                        <h2>{product.name}</h2>
+                        <p>{product.description}</p>
+                        <div className="btns">
+                        <button onClick={()=>handleAddFavorite(product)} className='btnh'><FaHeart /></button>
+                        <button className='btnv'>VIEW</button>
+                        </div>
+                    </div>
+                </div>
+                ))}
+               
+                </div>
+            </div>
             <div className='about'>
                 <div className='about-img'>
                     <img src="https://preview.colorlib.com/theme/selling/images/about_1.jpg.webp" alt="" />
